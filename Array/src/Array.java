@@ -34,11 +34,10 @@ public class Array<E> {
     }
 
     public void add(E e, int index) {
-        if (size == data.length)
-            throw new IllegalArgumentException("Add last failed.Array is full");
         if (index < 0 || index > size)
             throw new IllegalArgumentException("Add last failed. Index error");
-
+        if (size == data.length)
+            resize(data.length * 2);
         for (int i = size-1; i >= index; i--)
             data[i + 1] = data[i];
 
@@ -85,6 +84,9 @@ public class Array<E> {
         }
         size--;
         data[size] = null;
+        if (size == data.length / 2) {
+            resize(data.length / 2);
+        }
         return result;
     }
 
@@ -101,6 +103,14 @@ public class Array<E> {
         if (index != -1) {
             remove(index);
         }
+    }
+
+    private void resize(int newCapacity) {
+        E[] newData = (E[]) new Object[newCapacity];
+        for (int i = 0; i < size; i++) {
+            newData[i] = data[i];
+        }
+        data = newData;
     }
     @Override
     public String toString() {
