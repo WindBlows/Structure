@@ -22,5 +22,11 @@ public class Main {
             array.addLast(i);
         array.set(3, 99);
         System.out.println(array);
+
+        array.remove(4);
+        System.out.println(array);
+
+        array.remove(3);
+        System.out.println(array);
     }
 }
