@@ -9,5 +9,15 @@ public class Main {
         arrayQueue.dequeue();
         arrayQueue.getFront();
         System.out.println(arrayQueue);
+
+        LoopQueue loopQueue = new LoopQueue();
+        for (int i = 0; i < 10; i++) {
+            loopQueue.enqueue(i);
+        }
+        System.out.println(loopQueue);
+
+        loopQueue.dequeue();
+        loopQueue.getFront();
+        System.out.println(loopQueue);
     }
 }
