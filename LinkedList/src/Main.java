@@ -6,5 +6,7 @@ public class Main {
         linkedList.add(2, 5);
         linkedList.add(3, 6);
         System.out.println(linkedList);
+        linkedList.remove(2);
+        System.out.println(linkedList);
     }
 }
